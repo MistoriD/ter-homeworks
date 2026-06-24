@@ -1,4 +1,3 @@
-###cloud vars
 variable "token" {
   type        = string
   description = "OAuth-token; https://cloud.yandex.ru/docs/iam/concepts/authorization/oauth-token"
@@ -29,4 +28,13 @@ variable "vpc_name" {
   type        = string
   default     = "develop"
   description = "VPC network&subnet name"
+}
+
+variable "common_boot_disk_config" {
+  type = object({
+    size = number
+  })
+  default = {
+    size = 15
+  }
 }
